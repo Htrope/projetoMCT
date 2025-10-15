@@ -1,0 +1,65 @@
+.feedback-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  padding: 60px 0;
+  background-color: #000;
+}
+
+.feedback-card {
+  background-color: #0a0a0a;
+  border: 2px solid;
+  border-image: linear-gradient(45deg, #ff8c00, #000) 1;
+  border-radius: 14px;
+  color: #f4f4f4;
+  width: 330px;
+  min-height: 320px;
+  padding: 25px;
+  box-shadow: 0 0 18px rgba(255, 140, 0, 0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feedback-card:hover {
+  transform: scale(1.04);
+  box-shadow: 0 0 25px rgba(255, 140, 0, 0.4);
+}
+
+.feedback-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.avatar {
+  width: 65px;
+  height: 65px;
+  border-radius: 8px;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.feedback-header h3 {
+  font-size: 1.2rem;
+  margin-bottom: 4px;
+}
+
+.curso {
+  color: #ccc;
+  font-size: 0.95rem;
+}
+
+.acertos {
+  font-weight: bold;
+  font-size: 1.3rem;
+  color: #ff8c00;
+}
+
+.texto {
+  font-size: 1rem;
+  color: #ddd;
+  margin-top: 10px;
+  line-height: 1.6;
+  text-align: justify;
+}

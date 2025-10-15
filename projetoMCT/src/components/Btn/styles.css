@@ -1,0 +1,31 @@
+
+.cta-container {
+  display: flex;
+  justify-content: center;
+  margin: 60px 0;
+}
+
+.cta-button {
+  background: linear-gradient(45deg, #ff8c00, #ff6a00);
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  padding: 18px 40px;
+  cursor: pointer;
+  box-shadow: 0 0 15px rgba(255, 140, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cta-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(255, 140, 0, 0.6);
+}
+
+.cta-button span {
+  color: #000;
+  background-color: #fff;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
