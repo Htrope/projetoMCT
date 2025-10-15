@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import { copyFileSync } from 'fs'
+import path from 'path'
 
 export default defineConfig({
   plugins: [
@@ -8,8 +9,10 @@ export default defineConfig({
     {
       name: 'copy-redirects',
       closeBundle() {
-        // Copia o arquivo de redirecionamento pro dist
-        copyFileSync('public/_redirects', 'dist/_redirects')
+        const src = path.resolve(__dirname, './public/_redirects')
+        const dest = path.resolve(__dirname, './dist/_redirects')
+        copyFileSync(src, dest)
+        console.log('✅ _redirects copiado para dist/')
       },
     },
   ],
