@@ -1,12 +1,36 @@
-.feedback-container {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  flex-wrap: wrap;
-  padding: 60px 0;
+.carousel {
   background-color: #000;
+  color: #fff;
+  padding: 80px 10%;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
 }
 
+/* ===== Título ===== */
+.titulo {
+  font-size: 2.4rem;
+  font-weight: 800;
+  margin-bottom: 60px;
+  color: #f4f4f4;
+}
+
+.titulo span {
+  color: #ff6b00;
+}
+
+/* ===== Desktop ===== */
+.feedback-desktop {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 40px;
+}
+
+.feedback-mobile {
+  display: none;
+}
+
+/* ===== Card ===== */
 .feedback-card {
   background-color: #0a0a0a;
   border: 2px solid;
@@ -17,7 +41,7 @@
   min-height: 320px;
   padding: 25px;
   box-shadow: 0 0 18px rgba(255, 140, 0, 0.25);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: all 0.4s ease;
 }
 
 .feedback-card:hover {
@@ -62,4 +86,90 @@
   margin-top: 10px;
   line-height: 1.6;
   text-align: justify;
+}
+
+/* ===== Carrossel Mobile ===== */
+.feedback-mobile {
+  display: none;
+}
+
+.carousel-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* ===== Setas laterais ===== */
+.seta {
+  background: none;
+  border: none;
+  color: #ff6b00;
+  font-size: 2.8rem;
+  cursor: pointer;
+  transition: 0.3s;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+}
+
+.seta:hover {
+  color: #ffa94d;
+}
+
+.seta-esquerda {
+  left: -35px;
+}
+
+.seta-direita {
+  right: -35px;
+}
+
+/* ===== Responsivo ===== */
+@media (max-width: 900px) {
+  .feedback-desktop {
+    display: none;
+  }
+
+  .feedback-mobile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .feedback-card {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .titulo {
+    font-size: 1.8rem;
+  }
+
+  .texto {
+    font-size: 0.95rem;
+  }
+
+  .seta {
+    font-size: 2.4rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .feedback-card {
+    width: 95%;
+  }
+
+  .seta {
+    font-size: 2rem;
+  }
+
+  .seta-esquerda {
+    left: -25px;
+  }
+
+  .seta-direita {
+    right: -25px;
+  }
 }
