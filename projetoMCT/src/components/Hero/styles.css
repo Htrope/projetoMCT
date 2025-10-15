@@ -1,9 +1,95 @@
-div{
-    align-items: center;
+.hero {
+  margin-left: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  padding: 60px 8%;
+  color: #ffffff;
+  overflow: hidden;
 }
 
-.imgHero{
-    height: 600px;
-    margin-left: 40%;
-    margin-right: 50%;
+/* ===== Texto ===== */
+.hero-text {
+  flex: 1;
+  max-width: 500px;
+  z-index: 2;
+}
+
+.hero-text h2 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #ffffff;
+  text-transform: uppercase;
+  text-shadow: 0 0 10px rgba(255, 150, 50, 0.4);
+  margin: 0;
+}
+
+.hero-text span {
+  color: #ff6b00;
+  text-shadow: 0 0 15px rgba(255, 102, 0, 0.6);
+}
+
+/* ===== Imagem ===== */
+.hero-img {
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+}
+
+/* ===== Fade inferior + lateral direito ===== */
+.imgHero {
+  height: 600px;
+  object-fit: contain;
+  position: relative;
+  z-index: 1;
+
+  /* Novo método: usa gradiente combinado num pseudo-elemento */
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%),
+                      linear-gradient(to right, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 100%);
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%),
+               linear-gradient(to right, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 100%);
+  -webkit-mask-composite: destination-in;
+  mask-composite: intersect;
+}
+
+/* ===================================================== */
+/* 📱 RESPONSIVIDADE — iPhone (375px a 430px de largura) */
+/* Mantém lado a lado, mas ajusta proporções */
+/* ===================================================== */
+@media screen and (max-width: 430px) {
+  .hero {
+    margin-left: 0;
+    flex-direction: row;          /* mantém lado a lado */
+    gap: 10px;                    /* reduz espaço entre texto e imagem */
+    padding: 20px 5%;
+  }
+
+  .hero-text {
+    max-width: 45%;
+  }
+
+  .hero-text h2 {
+    font-size: 1.2rem;
+    line-height: 1.3;
+  }
+
+  .hero-img {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .imgHero {
+    height: 300px; /* proporcional à tela menor */
+    width: auto;
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 85%, rgba(0,0,0,0) 100%),
+                        linear-gradient(to right, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%);
+    mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 85%, rgba(0,0,0,0) 100%),
+                 linear-gradient(to right, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%);
+    -webkit-mask-composite: destination-in;
+    mask-composite: intersect;
+  }
 }
